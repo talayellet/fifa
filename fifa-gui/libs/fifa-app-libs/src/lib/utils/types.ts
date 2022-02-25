@@ -19,7 +19,11 @@ export type ChartData = {
 };
 
 export interface FifaChartProps {
-  data: Player[];
+  maxAge: number;
+  minAge: number;
+  refreshKey: number;
+  setMaxAge: (newVal: number) => void;
+  setMinAge: (newVal: number) => void;
 }
 export interface NormData {
   [key: string]: Player;
