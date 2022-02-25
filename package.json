@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/talayellet/fifa/issues"
   },
-  "homepage": "https://github.com/talayellet/fifa#readme"
+  "homepage": "https://github.com/talayellet/fifa#readme",
+  "dependencies": {
+    "nx": "^13.8.3"
+  }
 }
