@@ -1,0 +1,28 @@
+{
+  "root": "apps/fifa-app-e2e",
+  "sourceRoot": "apps/fifa-app-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/fifa-app-e2e/cypress.json",
+        "devServerTarget": "fifa-app:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "fifa-app:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/fifa-app-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["fifa-app"]
+}
