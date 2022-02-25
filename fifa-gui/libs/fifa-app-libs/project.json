@@ -1,0 +1,23 @@
+{
+  "root": "libs/fifa-app-libs",
+  "sourceRoot": "libs/fifa-app-libs/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/fifa-app-libs/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/fifa-app-libs"],
+      "options": {
+        "jestConfig": "libs/fifa-app-libs/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
