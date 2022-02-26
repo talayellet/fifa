@@ -18,3 +18,7 @@ export type ChartData = {
   y: number[];
   text: string[];
 };
+
+export interface FifaChartProps {
+  refreshKey: number;
+}

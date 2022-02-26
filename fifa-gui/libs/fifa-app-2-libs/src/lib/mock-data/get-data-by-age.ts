@@ -1,5 +1,5 @@
 import { ChartData } from '../utils/types';
-import { NORM_DATA } from '../mock-data/norm-data';
+import { NORM_DATA } from './norm-data';
 
 export const getDataByAge = (min: number, max: number): ChartData => {
   const chartData: ChartData = {

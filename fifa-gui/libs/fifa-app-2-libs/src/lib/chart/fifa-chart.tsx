@@ -1,22 +1,28 @@
-import { ReactElement } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
 import { CHART_TITLE } from '../utils/constants';
-import { getDataByAge } from './get-data-by-age';
+import { ChartData, FifaChartProps } from '../utils/types';
+import { GROUPS } from '../mock-data/groups';
 
-const group1 = getDataByAge(15, 20);
-
-export const FifaChart = (): ReactElement => {
+export const FifaChart = ({ refreshKey }: FifaChartProps): ReactElement => {
+  const [activeGroup, setActiveGroup] = useState<ChartData>(GROUPS[0]);
+  const [index, setIndex] = useState<number>(0);
+  useEffect(() => {
+    if (index < GROUPS.length) {
+      setActiveGroup(GROUPS[index]);
+      setIndex((prev) => prev + 1);
+    }
+  }, [refreshKey]);
   return (
     <div>
       <Plot
         data={[
           {
-            x: [...group1.x],
-            y: [...group1.y],
+            x: [...activeGroup.x],
+            y: [...activeGroup.y],
             mode: 'markers',
             type: 'scatter',
-            name: 'Team A',
-            text: [...group1.text],
+            text: [...activeGroup.text],
             marker: { size: 12 },
           },
         ]}
