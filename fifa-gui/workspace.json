@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "fifa-app": "apps/fifa-app",
+    "fifa-app-2": "apps/fifa-app-2",
     "fifa-app-e2e": "apps/fifa-app-e2e",
     "fifa-app-libs": "libs/fifa-app-libs"
   }
