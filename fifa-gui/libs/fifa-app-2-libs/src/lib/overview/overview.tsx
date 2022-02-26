@@ -51,7 +51,7 @@ export const Overview = (): ReactElement => {
       {started && <FifaChart refreshKey={refreshKey} />}
       <ButtonWrapper>
         <Button onClick={handleClick} variant="primary">
-          {refreshKey && refreshKey > 0 ? <span>Stop</span> : <span>Play</span>}
+          {started ? <span>Stop</span> : <span>Play</span>}
         </Button>{' '}
         {started && <span>{`Age: ${minAge}-${maxAge}`}</span>}
       </ButtonWrapper>
