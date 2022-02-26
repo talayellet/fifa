@@ -2,7 +2,9 @@ import { ReactElement, useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
 import { CHART_TITLE } from '../utils/constants';
 import { ChartData, FifaChartProps } from '../utils/types';
+import { FifaChartWrapper } from '../utils/styles';
 import { GROUPS } from '../mock-data/groups';
+import noData from '../resources/noData.png';
 
 export const FifaChart = ({ refreshKey }: FifaChartProps): ReactElement => {
   const [activeGroup, setActiveGroup] = useState<ChartData>(GROUPS[0]);
@@ -12,7 +14,15 @@ export const FifaChart = ({ refreshKey }: FifaChartProps): ReactElement => {
       setActiveGroup(GROUPS[index]);
       setIndex((prev) => prev + 1);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [refreshKey]);
+  if (refreshKey === 0) {
+    return (
+      <FifaChartWrapper>
+        <img src={noData} alt="No Data" />
+      </FifaChartWrapper>
+    );
+  }
   return (
     <div>
       <Plot
