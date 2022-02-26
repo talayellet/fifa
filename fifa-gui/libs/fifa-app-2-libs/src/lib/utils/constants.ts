@@ -3,3 +3,5 @@ export const INITIAL_MAX_AGE = 20;
 export const INITIAL_MIN_AGE = 15;
 export const MAX_REFRESH_COUNT = 15;
 export const TIME_INTERVAL = 3000;
+export const X_AXIS_TITLE = 'Wage';
+export const Y_AXIS_TITLE = 'Overall Rate';

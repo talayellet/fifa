@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
-import { CHART_TITLE } from '../utils/constants';
+import { CHART_TITLE, X_AXIS_TITLE, Y_AXIS_TITLE } from '../utils/constants';
 import { ChartData, FifaChartProps } from '../utils/types';
 import { FifaChartWrapper } from '../utils/styles';
 import { GROUPS } from '../mock-data/groups';
@@ -36,7 +36,13 @@ export const FifaChart = ({ refreshKey }: FifaChartProps): ReactElement => {
             marker: { size: 12 },
           },
         ]}
-        layout={{ width: 1000, height: 500, title: CHART_TITLE }}
+        layout={{
+          width: 1000,
+          height: 500,
+          title: CHART_TITLE,
+          xaxis: { title: { text: X_AXIS_TITLE } },
+          yaxis: { title: { text: Y_AXIS_TITLE } },
+        }}
       />
     </div>
   );
