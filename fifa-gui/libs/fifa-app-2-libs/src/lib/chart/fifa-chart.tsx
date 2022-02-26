@@ -2,11 +2,15 @@ import { ReactElement, useEffect, useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import Plot from 'react-plotly.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { CHART_TITLE, X_AXIS_TITLE, Y_AXIS_TITLE } from '../utils/constants';
+import {
+  CHART_HEIGHT,
+  CHART_TITLE,
+  CHART_WIDTH,
+  X_AXIS_TITLE,
+  Y_AXIS_TITLE,
+} from '../utils/constants';
 import { ChartData, FifaChartProps } from '../utils/types';
-import { FifaChartWrapper } from '../utils/styles';
 import { GROUPS } from '../mock-data/groups';
-import noData from '../resources/noData.png';
 
 export const FifaChart = ({ refreshKey }: FifaChartProps): ReactElement => {
   // chart handlers
@@ -29,13 +33,6 @@ export const FifaChart = ({ refreshKey }: FifaChartProps): ReactElement => {
   const [club, setClub] = useState<string>('');
   const [nationality, setNationality] = useState<string>('');
 
-  if (refreshKey === 0) {
-    return (
-      <FifaChartWrapper>
-        <img src={noData} alt="No Data" />
-      </FifaChartWrapper>
-    );
-  }
   return (
     <div>
       <Plot
@@ -51,8 +48,8 @@ export const FifaChart = ({ refreshKey }: FifaChartProps): ReactElement => {
           },
         ]}
         layout={{
-          width: 1000,
-          height: 500,
+          width: CHART_WIDTH,
+          height: CHART_HEIGHT,
           title: CHART_TITLE,
           xaxis: { title: { text: X_AXIS_TITLE } },
           yaxis: { title: { text: Y_AXIS_TITLE } },
