@@ -20,6 +20,9 @@ export const FifaChart = ({ refreshKey }: FifaChartProps): ReactElement => {
     if (index < GROUPS.length) {
       setActiveGroup(GROUPS[index]);
       setIndex((prev) => prev + 1);
+    } else {
+      setActiveGroup(GROUPS[0]);
+      setIndex(0);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [refreshKey]);

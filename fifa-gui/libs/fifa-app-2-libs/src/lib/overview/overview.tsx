@@ -3,12 +3,18 @@ import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ButtonWrapper, ChartWrapper } from '../utils/styles';
 import { FifaChart } from '../chart/fifa-chart';
+import { RAW_DATA } from '../mock-data/raw-data';
 import {
   INITIAL_MAX_AGE,
   INITIAL_MIN_AGE,
   MAX_REFRESH_COUNT,
   TIME_INTERVAL,
 } from '../utils/constants';
+
+if (localStorage) {
+  const rawData = JSON.stringify(RAW_DATA, null, 2);
+  localStorage.setItem('rawData', rawData);
+}
 
 export const Overview = (): ReactElement => {
   const [refreshKey, setRefreshKey] = useState<number>(0);
