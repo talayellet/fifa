@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@fifa-gui/fifa-app-2-libs": ["libs/fifa-app-2-libs/src/index.ts"],
       "@fifa-gui/fifa-app-libs": ["libs/fifa-app-libs/src/index.ts"]
     }
   },
