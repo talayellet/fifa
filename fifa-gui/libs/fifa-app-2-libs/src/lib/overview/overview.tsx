@@ -1,4 +1,7 @@
 import { ReactElement, useCallback, useEffect, useState } from 'react';
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ButtonWrapper } from '../utils/styles';
 import { FifaChart } from '../chart/fifa-chart';
 import {
   INITIAL_MAX_AGE,
@@ -42,8 +45,12 @@ export const Overview = (): ReactElement => {
   return (
     <div>
       <FifaChart refreshKey={refreshKey} />
-      <button onClick={handleClick}>Play</button>
-      {refreshKey > 0 && <span>{`Age: ${minAge}-${maxAge}`}</span>}
+      <ButtonWrapper>
+        <Button onClick={handleClick} variant="primary">
+          Play
+        </Button>{' '}
+        {refreshKey > 0 && <span>{`Age: ${minAge}-${maxAge}`}</span>}
+      </ButtonWrapper>
     </div>
   );
 };

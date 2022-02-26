@@ -17,12 +17,7 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "OTBhMDliMmMtMGUxMS00NjY0LTk1NDktMTUwNDUxMzk0NGQ3fHJlYWQtd3JpdGU="
       }
     }
@@ -50,6 +45,5 @@
         "linter": "eslint"
       }
     }
-  },
-  "defaultProject": "fifa-app"
+  }
 }
