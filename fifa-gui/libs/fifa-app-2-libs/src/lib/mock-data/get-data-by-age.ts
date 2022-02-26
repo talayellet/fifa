@@ -3,9 +3,10 @@ import { NORM_DATA } from './norm-data';
 
 export const getDataByAge = (min: number, max: number): ChartData => {
   const chartData: ChartData = {
+    customdata: [],
+    text: [],
     x: [],
     y: [],
-    text: [],
   };
   for (let i = min; i <= max; i++) {
     const group = NORM_DATA[i];
@@ -14,6 +15,9 @@ export const getDataByAge = (min: number, max: number): ChartData => {
         chartData.x.push(group[j].age);
         chartData.y.push(group[j].overall);
         chartData.text.push(group[j].name);
+        chartData.customdata?.push(
+          `{"photo": "${group[j].photo}", "club": "${group[j].club}", "nationality": "${group[j].nationality}"}`
+        );
       }
     }
   }

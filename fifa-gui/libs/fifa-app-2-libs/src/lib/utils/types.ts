@@ -14,9 +14,10 @@ export type NormData = {
 };
 
 export type ChartData = {
+  customdata?: string[];
+  text: string[];
   x: number[];
   y: number[];
-  text: string[];
 };
 
 export interface FifaChartProps {
